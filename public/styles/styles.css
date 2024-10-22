@@ -1,0 +1,386 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+:root {
+    --blue:  rgb(46, 81, 162);
+    --black: rgb(78, 78, 78);
+    --grey: rgba(30, 30, 30, 1);
+    --dark-grey: rgb(58, 58, 58);
+}
+
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--blue);
+    height: 30px;
+    align-items: center;
+    position: fixed;
+    flex: auto;
+    padding: 0px 10px;
+    width: 70rem;   
+}
+
+#nav-list a{
+    text-decoration: none;
+    padding: 7px;
+    font-size: 16px;
+}
+
+#nav-list a:hover {
+    background-color: var(--black);
+}
+
+#manga {
+    margin-top: 30px;
+    width: 70rem;
+    border-right: 1px solid var(--black);
+    border-left: 1px solid var(--black);
+    
+    border-bottom: 1px solid var(--black);
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+table, th, td {
+    border: 1px solid var(--black);
+    border-collapse: collapse;
+}
+
+th {
+    background-color: var(--black);
+    font-weight: normal;
+    font-size: 14px;
+}
+
+table {
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.ttle {
+    
+    padding-left: 15px;
+}
+
+#rank {
+    width: 150px;
+    height: 25px;
+    border: 1px solid black;
+}
+
+#title {
+    width: 700px;
+    height: 25px;
+    border: 1px solid black;
+}
+
+#score {
+    width: 200px;
+    height: 25px;
+    border: 1px solid black;
+}
+
+#about {
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+#gif {
+    height: 350px;
+}
+
+.border {
+    padding-bottom: 15px;
+    
+
+}
+
+.border p {
+    margin: 10px 5px;
+}
+
+.mid {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.border a {
+    color: aqua;
+    transition: 0.3s ease-out;
+}
+
+.border a:hover {
+    color: blue;
+}
+
+.midtext {
+    text-align: center;
+}
+
+tr:nth-child(odd) {
+    background-color: rgba(41, 41, 41, 0.5);
+}
+
+.small {
+    height: 100px;
+    margin-right: 10px;
+}
+
+.text {
+    display: flex;
+    text-align: start;
+    padding: 10px;
+}
+
+.bignumber {
+    font-weight: bold;
+    font-size: 70px;
+    color: var(--black);
+}
+
+.bigtitle {
+    font-weight: bolder;
+    color: rgb(105, 170, 255);
+    font-size: 18px;
+}
+
+.desc {
+    font-size: 16px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.des {
+    font-size: 15px;
+}
+
+.btn {
+    background: none;
+    border: none;
+    text-decoration: underline;
+}
+
+.revieww {
+    background: none;
+    border: none;
+    
+}
+
+.rvw {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+
+button {
+    cursor: pointer
+}
+
+.und:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--blue);
+    text-decoration-thickness: 2px;
+}
+
+.bigscore {
+    font-size: 18px;
+}
+
+#footer {
+    height: 115px;
+    width: 100%;  
+    background-color: rgba(30, 30, 30, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 400px;
+    font-size: 24px;
+    align-items: end;
+    border-bottom: 2px double var(--black);
+    padding: 0px 30px;
+}
+
+.icon svg {
+    transition: 0.2s ease-out;
+}
+
+.icon svg:hover {
+    fill: var(--black);
+}
+
+.rvwtitle {
+    padding-left: 15px;
+    background-color: rgba(30, 30, 30, 1);
+    border-bottom: 1px solid var(--black);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.imgrvw {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.overall {
+   display: flex;
+   flex-direction: row;
+   background-color: var(--grey);
+   border: 1px solid var(--black);
+   padding: 10px;
+   width: 200px;
+   align-items: center;
+   justify-content: center;
+}
+
+.scre p {
+    background-color: var(--blue);
+    padding: 2px;
+    border-radius: 3px;
+    font-size: x-small;
+    width: 70px;
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+.scre {
+    text-align: center;
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid var(--black);
+}
+
+.space {
+    margin-right: 5px;
+}
+
+.imgbrd {
+    padding-right: 10px;
+    border-right: 1px solid var(--black);
+    margin-right: 10px;
+}
+
+.bttn button {
+    background: none;
+    color: grey;
+    border: none;
+    
+    padding: 3px 5px
+}
+
+.bttn {
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 51.2em;
+}
+
+.bttn button:hover {
+    background-color: white;
+    color: black;
+}
+
+.backbutton {
+    background-color: white !important;
+    color: black !important;
+}
+
+#next {
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    width: 70px;
+    height: 25px;
+    
+}
+
+.spacebtn {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 15px;
+}
+  
+.searchimg {
+   width: 90px;
+   height: 100%;
+   object-fit: cover;
+   object-position: center;
+}
+
+#sugges {
+    position: absolute;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--dark-grey);
+    width: 300px;
+    border: none;
+    transition: ease-out 0.3s;
+    padding: 5px;
+    align-items: center;
+    height: 50px;
+    object-fit: none;
+   
+}
+
+.search:hover {
+    background-color: var(--black);
+    height: 150px;
+    font-size: 24px;
+}
+
+#search-input {
+    width: 300px;
+    background-color: var(--grey);
+    border: none;
+    height: 23px;
+    padding-left: 5px;
+    outline: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.search-icon {
+    background-color: var(--dark-grey);
+    height: 23px;
+    width: 26px;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.searchtitle {
+    font-size: 20px;
+    margin-left: 10px;
+}

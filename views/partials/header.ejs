@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="styles\styles.css">
+     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+     <script src="https://code.jquery.com/jquery-migrate-3.4.1.js"></script>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+     <script src="script.js" charset="UTF-8"></script>
+     <title>MyMangaList </title>
+    </head>
+    <body>
+        <section id="navbar">
+            <div id="nav-list">
+            <a href="/">Manga</a>
+            <a href="/about">About</a>  
+            </div>
+            <div id="search">
+            <form action="/search" method="get"><input id="search-input" name="search" type="text" placeholder="Search Manga"><button class="search-icon" type="submit"><i class="bi bi-search"></i></button></form>
+            <div id="sugges"></div> 
+            </div>
+        </section>
+        <script>
+            $(document).ready(function() {
+              $('#search-input').on('keyup', function() {
+                var userInput = $('#search-input').val();
+              
+                if (userInput.length > 1) {
+                  $.ajax({
+                      url: '/search',  
+                      method: 'GET',  
+                      data: { search: userInput },  
+                      success: function(response) {
+                        console.log(response)
+                          $('#sugges').empty();
+                          response.forEach(function(se) {
+                              $('#sugges').append('<form action="/review" method="POST" class="rvw"><button type="submit" name="rank" value="' + se.rank + '" class="search"><img class="searchimg" src="https://uploads.mangadex.org/covers/' + se.img + '"><p class="searchtitle">' + se.title + '</p></button></form>');
+                          });
+                      },
+                      error: function(error) {
+                          console.error('Error:', error);
+                      }
+                  });
+              } else {
+                  $('#sugges').empty();  
+              }})
+            })
+          </script>

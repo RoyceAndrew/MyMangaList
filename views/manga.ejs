@@ -1,0 +1,57 @@
+<%- include("partials/header.ejs") %>
+  <section id="manga">
+    <h1 class="ttle">My Top Manga</h1>
+    <table>
+    <tr>
+      <th id="rank"><form action="/reverse" method="POST"><button type="submit" name="page" value="manga" class="btn">Rank</button></form></th>
+      <th id="title">Title</th>
+      <th id="score">My Score</th>
+    </tr>
+    <% manga.forEach(man => { %>
+      <tr class="item">
+      <td class="midtext"><p class="bignumber"><%= man.rank %></p></td>
+      <td class="text"><form action="/review" method="POST" class="rvw"><button type="submit" name="rank" value="<%= man.rank %>" class="revieww"><img class="small" src="<%= img+man.img %>"></button>
+      <div><button type="submit" name="rank" value="<%= man.rank %>" class="revieww und"><p class="bigtitle"><%= man.title %></p></button></form><p class="desc">Author</p><p class="des"><%= man.author %></p><p class="desc">Genres</p><p class="des"><%= man.genres %></p></div></td>
+      <td class="midtext bigscore">⭐<%= man.score %></td>
+    </tr>
+    <% }); %>
+      
+    </table>
+    <div class="spacebtn">
+    <button id="next">Next 5 ></button>
+    </div>
+  </section>
+  <script>
+    let itemPerPage = 5
+    let currentPage = 1
+   
+    function nextItem() {
+       let start = (currentPage - 1) * itemPerPage;
+       let end = start + itemPerPage;
+       
+       $('.item').hide();
+
+       $('.item').slice(start, end).show();
+
+       if (currentPage == 2) {
+        currentPage--
+       } else {
+        currentPage++
+       }
+    };
+
+    nextItem();
+
+    $('#next').click(function() {
+      if (currentPage == 2) {
+        nextItem();
+        $('#next').text(`< Prev 5`)
+      } else {
+       nextItem();
+        $('#next').text(`Next 5 >`)
+      }
+   })
+
+    
+  </script>
+<%- include("partials/footer.ejs") %>

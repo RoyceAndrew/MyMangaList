@@ -1,0 +1,20 @@
+<%- include("partials/header.ejs") %>
+    <section id="manga">
+    <h1 class="ttle">Search Result</h1>
+    <table>
+    <tr>
+      <th id="rank"><form action="/reverse" method="POST"><input type="hidden" name="searchQuery" value="<%= searchQuery %>"><button type="submit" name="page" value="search" class="btn">Rank</button></form></th>
+      <th id="title">Title</th>
+      <th id="score">My Score</th>
+    </tr>
+    <% search.forEach(se =>  { %>
+        <tr class="item">
+            <td class="midtext"><p class="bignumber"><%= se.rank %></p></td>
+            <td class="text"><form action="/review" method="POST" class="rvw"><button type="submit" name="rank" value="<%= se.rank %>" class="revieww"><img class="small" src="<%= img+se.img %>"></button>
+            <div><button type="submit" name="rank" value="<%= se.rank %>" class="revieww und"><p class="bigtitle"><%= se.title %></p></button></form><p class="desc">Author</p><p class="des"><%= se.author %></p><p class="desc">Genres</p><p class="des"><%= se.genres %></p></div></td>
+            <td class="midtext bigscore">⭐<%= se.score %></td>
+          </tr>
+    <% }) %>
+</table>
+    </section>
+<%- include("partials/footer.ejs") %>
