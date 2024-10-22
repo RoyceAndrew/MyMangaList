@@ -7,8 +7,6 @@
 ## Features
 
 - **User-Friendly Interface:** Intuitive layout for easy navigation and interaction.
-- **Manga Tracking:** Users can search, add, and manage their manga lists.
-- **Data Fetching:** Integrates with the Mangadex API for up-to-date manga information.
 - **Dynamic Content:** Uses AJAX and jQuery for smooth content updates without full page reloads.
 
 ## Installation
