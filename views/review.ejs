@@ -1,0 +1,38 @@
+<%- include("partials/header.ejs") %>
+<section id="manga">
+    <div>
+    <h1 class="rvwtitle"><%= review.title %></h1>
+        <div class="imgrvw">
+        <img class="imgbrd" src="<%= img+review.img  %>">
+            <div>
+                <div class="overall">
+                    <div class="scre">
+                    <p>SCORE</p>
+                    <h2><%= review.score %></h2>
+                    </div>
+                    <p class="space">Ranked</p><h3>#<%= review.rank %></h3>
+                </div>
+            <div class="bttn">
+            <button id="synopsis" class="backbutton">Synopsis</button>
+            <button id="review">Review</button>
+            </div>
+            <p id="trgt"><%= review.synopsis %></p>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).on("click", "#review", function() {
+    $("#trgt").replaceWith(`<p id="trgt"><%= review.review %></p>`);
+    $("#review").replaceWith(`<button id="review" class="backbutton">Review</button>`);
+    $("#synopsis").replaceWith(`<button id="synopsis">Synopsis</button>`);
+});
+
+    $(document).on("click", "#synopsis", function() {
+    $("#trgt").replaceWith(`<p id="trgt"><%= review.synopsis %></p>`);
+    $("#review").replaceWith(`<button id="review">Review</button>`);
+    $("#synopsis").replaceWith(`<button id="synopsis" class="backbutton">Synopsis</button>`);
+});
+</script>
+<%- include("partials/footer.ejs") %>
+
